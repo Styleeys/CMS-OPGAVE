@@ -1,0 +1,116 @@
+<% include partials/head %>
+<% include partials/header %>
+
+<a class="nav-link" href="/logout"><button>Log ud</button></a>
+
+<div class="user_profil">
+
+</div>
+<p>Af
+	<%= results.firstname %>
+</p>
+<p>
+	<%= results.lastname %>
+</p>
+<p>
+	<%= results.bio %>
+</p>
+
+<div class="redigere_profil">
+	<a href="/redigere">Redigere profil</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+const form = document.querySelector('.profileForm');
+form.addEventListener('submit', function (event) {
+event.preventDefault();
+fetch('/profile', {
+	method: 'PATCH',
+	headers: {
+		'Content-Type': 'application/json'
+	},
+	body: JSON.stringify({
+		firstname: this.firstname.value,
+		lastname: this.lastname.value,
+		bio: this.bio.value
+	})
+})
+	.then(response => {
+		if (response.status === 204) {
+			return response.json();
+		}
+	}).then(data => {
+		/* ??? */
+	})
+});
+
+const file = document.querySelector('.profileFileSelect');
+file.addEventListener('change', function (event) {
+const formData = new FormData();
+formData.append('photo', this.files[0]);
+fetch('/profile/image', {
+	method: 'PATCH',
+	body: formData
+})
+	.then(response => {
+		if (response.status === 200) return response.json();
+	})
+	.then(data => {
+		const img = document.querySelector('.profileImage');
+		img.src = `/uploads/${data.photo}`;
+	});
+});
+
+function fileValidation(){
+var fileInput = document.getElementById('file');
+var filePath = fileInput.value;
+var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+if(!allowedExtensions.exec(filePath)){
+	alert('Please upload file having extensions .jpeg/.jpg/.png only.');
+	fileInput.value = '';
+	return false;
+}
+};
+
+//Validering
+function validate(f) {
+if (f.firstname.value === "Skriv dit navn her" || f.firstname.value === "") {
+	alert("Ikke godkendt.\nHusk at skrive dit navn.");
+	f.firstname.focus();
+	return false;
+}
+if (f.lastname.value === "Skriv dit efternavn her" || f.lastname.value === "") {
+	alert("Ikke godkendt.\nHusk at skrive  dit efternavn.");
+	f.navn.focus();
+	return false;
+}
+if (f.bio.value === "Beskrivelse" || f.bio.value === "") {
+	alert("Ikke godkendt.\nHusk at skrive din bio.");
+	f.bio.focus();
+	return false;
+}
+alert("Dine oplysninger er nu opdateret");
+/*return true;*/
+return false;
+}
+</script>  -->
+
+<% include partials/footer %>
+<% include partials/after-footer %>

@@ -1,0 +1,33 @@
+<% include partials/head %>
+<% include partials/header %>
+<form action="user/profil" method="post">
+    <div id="wrap_redigere">
+<div class="form_redigere">
+    <label>
+        Firstname
+        <input type="text" name="firstname">
+    </label>
+</div>
+<div class="form_redigere">
+    <label>
+        lastname
+        <input type="text" name="lastname">
+    </label>
+</div>
+<div class="form_redigere">
+    <label>
+        Email
+        <input type="text" name="email" >
+    </label>
+</div>
+<div class="form_redigere">
+    <label>
+        Beskrivelse
+        <textarea name="bio"></textarea>
+    </label>
+</div>
+<button type="submit">Gem</button>
+</form>
+</div>
+<% include partials/footer %>
+<% include partials/after-footer %>

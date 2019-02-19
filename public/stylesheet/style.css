@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+}
+.logo {
+    margin: 0;
+}
+.logo a {
+    text-decoration: none;
+    margin: 0;
+    position: absolute;
+    top: 2%;
+    font-size: 2.2em;
+    text-shadow: 1px 1px lightcoral;
+    font-weight: 100;
+    background-color: lightskyblue;
+
+    -webkit-border-radius: 5px 5px 5px 5px; 
+    -moz-border-radius: 5px 5px 5px 5px;
+    -o-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+
+}
+.img_container img {
+    overflow: hidden;
+    height: 38em;
+    width: 100%;
+    opacity: .8;
+    background-repeat: no-repeat;
+}
+.nav_bar {
+    margin: 0;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}
+.nav_bar li {
+    list-style: none;
+    margin: 1em 4em;
+}
+.nav_bar a {
+    color: lightskyblue;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.centered h1 {
+    font-size: 4em;
+    text-shadow: 2px 2px black;
+}
+#explore_text {
+    display: flex;
+}
+.article {
+    width: 20em;
+    /* text-align: center; */
+    margin: 4em 10em;
+}
+/*=============================OPRET BRUGER======================================================*/
+.opret_form {
+    margin: 5em;
+}
+.opret_form input {
+    margin: 0 10%;
+    display: block;
+}
+.opret_form label {
+    text-align: left;
+}
+/*=============================REDIGERE BRUGER======================================================*/
+#wrap_redigere {
+    text-align: center;
+}
+.form_redigere input {
+    margin: 2em;
+}
+.form_redigere label {
+    display: inline;
+}
