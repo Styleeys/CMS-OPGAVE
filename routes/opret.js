@@ -10,14 +10,14 @@ module.exports = (app) => {
     app.post('/user/opret', (req, res, next) => {
         let success = true;
         let errorMessage;
-
+        
         let hashPassword = bcrypt.hashSync(req.fields.password, 10);
-        db.query(`INSERT INTO users (username, password) VALUES (?, ?) `, [req.fields.username, hashPassword], (err) => {
+        db.query(`INSERT INTO users (username, password, email) VALUES (?, ?, ?) `, [req.fields.username, hashPassword, req.fields.email], (err) => {
             if (err) {
                 console.log(err);
             } else
                 //Data indsat korrekt//
-                res.redirect('login');
+                res.render('login');
         });
     });
 }

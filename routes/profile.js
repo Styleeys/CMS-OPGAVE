@@ -12,12 +12,12 @@ module.exports = function (app) {
     //             res.render('profile', { 'results': result });
     //         });
     // });
-    app.get('/profil', (req, res) => {
-        db.query('SELECT * FROM crud.profiles WHERE profiles = ?', [req.params.id], function (err, results) {
-            if (err) return res.send(err);
-            res.render('profile', {title: 'profile', 'results': results});
-        });
-    });
+    // app.get('/profile', (req, res) => {
+    //     db.query('SELECT * FROM crud.profiles WHERE profiles = ?', [req.params.id], function (err, results) {
+    //         if (err) return res.send(err);
+    //         res.render('profile', {title: 'profile', 'results': results});
+    //     });
+    // });
 
     app.get('/logout', (req, res) => {
         req.session.destroy(); res.redirect('/login');

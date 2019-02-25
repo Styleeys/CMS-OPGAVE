@@ -1,7 +1,6 @@
 <% include partials/head %>
 <% include partials/header %>
 
-<h1><%= title %></h1>
 <form action="/auth/login" method="POST">
 	<% if (typeof status != 'undefined') { %>
 		<span class="errorMessage"><%= status %></span>
