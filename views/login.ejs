@@ -1,17 +1,17 @@
 <% include partials/head %>
 <% include partials/header %>
 
-<form action="/auth/login" method="POST">
+<form action="/login" method="POST" class="login_form">
 	<% if (typeof status != 'undefined') { %>
 		<span class="errorMessage"><%= status %></span>
 	<% } %>
-	<div class="inputGroup">
+	<div class="loginInput">
 		<label>
 			Brugernavn
 			<input type="text" name="username">
 		</label>
 	</div>
-	<div class="inputGroup">
+	<div class="loginInput">
 		<label>
 			Adgangskode
 			<input type="password" name="password">

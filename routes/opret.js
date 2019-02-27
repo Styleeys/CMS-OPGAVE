@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 module.exports = (app) => {
 
     app.get('/user/opret', (req, res) => {
-        res.render('opret_bruger', { title: 'Log ind' });
+        res.render('opretBruger');
     });
 
     app.post('/user/opret', (req, res, next) => {
@@ -12,12 +12,14 @@ module.exports = (app) => {
         let errorMessage;
         
         let hashPassword = bcrypt.hashSync(req.fields.password, 10);
-        db.query(`INSERT INTO users (username, password, email) VALUES (?, ?, ?) `, [req.fields.username, hashPassword, req.fields.email], (err) => {
+        db.query(`INSERT INTO users (username, password, email) VALUES (?, ?, ?) `, [req.fields.username, hashPassword, req.fields.email], (err, result) => {
             if (err) {
-                console.log(err);
-            } else
+                res.send('');
+                console.log('fejl:' + err);
+            } else {
                 //Data indsat korrekt//
                 res.render('login');
+            }
         });
     });
 }

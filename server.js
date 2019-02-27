@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+
 const ejs = require('ejs');
 app.set('view engine', 'ejs');
 
@@ -9,28 +10,41 @@ app.set('view engine', 'ejs');
 const formadable = require('express-formidable');
 app.use(formadable());
 
-
 app.use(express.static('./public'));
 
-//require('./config/mysql')(app);
 require('./config/session')(app);
-require('./routes/auth')(app);
+
+let protectedRoutes = [
+    '/profil',
+    '/redigere/profil'
+];
+
+app.use(protectedRoutes, (req, res, next) => {
+    if (!req.session.user_id) {
+        res.redirect('/login');
+        return;
+    } else {
+        next();
+    }
+});
+
+require('./routes/login')(app);
 require('./routes/opret')(app);
-require('./routes/about_us')(app);
-require('./routes/profile')(app);
-require('./routes/redigere_profil')(app);
+require('./routes/aboutUs')(app);
+require('./routes/profil')(app);
+require('./routes/redigereProfil')(app);
 
 // ========================ROUTES========================================
 
-app.get('test',(req, res, next) => {
+app.get('test', (req, res, next) => {
     res.send('Hello');
 });
-app.get('/',(req, res, next) => {
+app.get('/', (req, res, next) => {
     res.render('forside');
 });
 
 // ========================ROUTES-END========================================
 
-app.listen(3000,() => {
+app.listen(3000, () => {
     console.log('http://localhost:3000');
 })

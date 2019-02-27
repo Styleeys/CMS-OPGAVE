@@ -1,6 +1,6 @@
 <% include partials/head %>
 <% include partials/header %>
-<form action="/user/profil" method="post">
+<form action="/user/profil" method="post" enctype="multipart/form-data">
     <div id="wrap_redigere">
 
 <div class="form_redigere">
@@ -19,10 +19,13 @@
 
 <div class="form_redigere">
     <label for="bio">
-        Beskrivelse
-        <textarea name="bio"></textarea>
+        kort beskrivelse om dig
+        <textarea name="bio" ></textarea>
     </label>
 </div>
+
+<label for="image">Billede</label>
+<input type="file" name="image">
 
 <button type="submit">Gem</button>
 </form>

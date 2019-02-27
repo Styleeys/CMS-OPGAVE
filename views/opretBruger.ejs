@@ -1,0 +1,16 @@
+<% include partials/head %>
+<% include partials/header %>
+
+<form action="/user/opret" method="post" class="opret_form" id="opret_user">
+
+    <label for="firstname">Vælg dit username:<input type="text" name="username" class="user_input"></label>
+    <br>
+    <label for="password">Vælg dit password:<input type="password" name="password" class="user_input"></label>
+    <br>
+    <label for="email">Skriv din Email her:<input type="text" name="email" class="user_input"></label>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+
+<% include partials/footer %>
+<% include partials/after-footer %>

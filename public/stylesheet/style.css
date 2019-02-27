@@ -35,7 +35,7 @@ body {
 }
 .nav_bar li {
     list-style: none;
-    margin: 1em 4em;
+    margin: 1em 2.5em;
 }
 .nav_bar a {
     color: lightskyblue;
@@ -63,14 +63,24 @@ body {
 }
 /*=============================OPRET BRUGER======================================================*/
 .opret_form {
-    margin: 5em;
+    height: 42em;
+    width: 100%;
+    background: url('/img/blomst.jpg');
+    text-align: center;
 }
 .opret_form input {
-    margin: 0 10%;
-    display: block;
+    border-radius: 10px;
+    padding: 20px; 
+    width: 180px;
+    height: 13px;
+    margin: 2em;
 }
 .opret_form label {
-    text-align: left;
+    font-size: 1.3em;
+}
+.opret_form button {
+    height: 3em;
+    width: 6em;
 }
 /*=============================REDIGERE BRUGER======================================================*/
 #wrap_redigere {
@@ -81,4 +91,59 @@ body {
 }
 .form_redigere label {
     display: inline;
+}
+/*=============================PROFILE======================================================*/
+.redigere_profil {
+    position: absolute;
+}
+.redigere_profil img {
+    height: 2em;
+    width: auto;
+}
+.redigere_profil a {
+    text-align: right;
+}
+.left_box {
+    background-color: lightskyblue;
+    height: 40em;
+    width: 25em;
+}
+.profile {
+    display: flex;
+    margin: 0 5em;
+}
+.profile h1 {
+    font-size: 2em;
+}
+.name {
+    padding-right: .4em;
+}
+.profile p {
+    font-size: 1em;
+    padding-left: 1em; 
+}
+.profile img {
+    width: auto;
+    height: 7em;
+    padding-top: 2em;
+}
+/*=============================LOGIN======================================================*/
+.login_form {
+    height: 42em;
+    background: url('/img/blomst.jpg');
+    text-align: center;
+}
+.login_form label {
+    font-size: 1.3em;
+}
+.login_form button {
+    height: 3em;
+    width: 6em;
+}
+.loginInput input {
+    border-radius: 10px;
+    padding: 20px; 
+    width: 180px;
+    height: 13px;
+    margin: 2em;
 }
